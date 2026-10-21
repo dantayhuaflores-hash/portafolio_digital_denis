@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Denis Kameli Antayhua Flores | Ingeniero Industrial</title>
+  <style>
+    :root {
+      --azul: #1e3a8a;
+      --azul-claro: #3b82f6;
+      --rosa: #ec4899;
+      --rosa-claro: #f9a8d4;
+      --fondo: #fdf2f8;
+      --texto: #1f2937;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #dbeafe 0%, #fdf2f8 50%, #fce7f3 100%);
+      color: var(--texto);
+      line-height: 1.7;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      background: linear-gradient(120deg, var(--azul) 0%, var(--azul-claro) 45%, var(--rosa) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 70px 20px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -60px;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      background: var(--fondo);
+      border-radius: 50% 50% 0 0;
+    }
+
+    .avatar {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--azul);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      font-weight: 700;
+      border: 5px solid var(--rosa-claro);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    header h1 {
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      letter-spacing: 1px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    header p.subtitulo {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      font-weight: 300;
+      opacity: .95;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 8px 20px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 999px;
+      font-size: .95rem;
+      backdrop-filter: blur(4px);
+    }
+
+    /* ---------- CONTENIDO ---------- */
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px 70px;
+      display: grid;
+      gap: 28px;
+    }
+
+    section {
+      background: #fff;
+      border-radius: 18px;
+      padding: 30px 32px;
+      box-shadow: 0 10px 30px rgba(30, 58, 138, 0.10);
+      border-left: 6px solid var(--azul-claro);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    section:nth-child(even) { border-left-color: var(--rosa); }
+
+    section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(236, 72, 153, 0.18);
+    }
+
+    section h2 {
+      font-size: 1.35rem;
+      color: var(--azul);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    section:nth-child(even) h2 { color: var(--rosa); }
+
+    section h2 .icono {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--azul-claro), var(--rosa));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    p { margin-bottom: 10px; }
+    p:last-child { margin-bottom: 0; }
+
+    .datos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .dato {
+      background: linear-gradient(135deg, #eff6ff, #fdf2f8);
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .dato span.etiqueta {
+      display: block;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--rosa);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .dato span.valor { font-weight: 600; color: var(--azul); }
+
+    ul.lista { list-style: none; }
+
+    ul.lista li {
+      position: relative;
+      padding: 8px 0 8px 30px;
+      border-bottom: 1px dashed #e5e7eb;
+    }
+
+    ul.lista li:last-child { border-bottom: none; }
+
+    ul.lista li::before {
+      content: "◆";
+      position: absolute;
+      left: 6px;
+      top: 8px;
+      color: var(--rosa);
+      font-size: .85rem;
+    }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+
+    .tag {
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: .88rem;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, var(--azul-claro), var(--azul));
+    }
+
+    .tag:nth-child(even) {
+      background: linear-gradient(135deg, var(--rosa), #db2777);
+    }
+
+    .destacado {
+      background: linear-gradient(120deg, var(--azul) 0%, var(--rosa) 100%);
+      color: #fff;
+      border-left: none;
+      text-align: center;
+    }
+
+    .destacado h2 { color: #fff; justify-content: center; }
+    .destacado p { font-size: 1.12rem; font-weight: 300; }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: linear-gradient(120deg, var(--azul) 0%, var(--rosa) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 26px 20px;
+      font-size: .95rem;
+    }
+
+    footer strong { letter-spacing: .5px; }
+
+    @media (max-width: 560px) {
+      section { padding: 24px 20px; }
+      header { padding: 55px 16px 50px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="avatar">DK</div>
+    <h1>Denis Kameli Antayhua Flores</h1>
+    <p class="subtitulo">Ingeniero Industrial · 26 años</p>
+    <span class="badge">Minería · Planeamiento y Control de Procesos</span>
+  </header>
+
+  <main>
+
+    <section>
+      <h2><span class="icono">i</span> Información Personal</h2>
+      <div class="datos">
+        <div class="dato">
+          <span class="etiqueta">Nombre</span>
+          <span class="valor">Denis Kameli Antayhua Flores</span>
+        </div>
+        <div class="dato">
+          <span class="etiqueta">Edad</span>
+          <span class="valor">26 años</span>
+        </div>
+        <div class="dato">
+          <span class="etiqueta">Formación</span>
+          <span class="valor">Bachiller en Ingeniería Industrial</span>
+        </div>
+        <div class="dato">
+          <span class="etiqueta">Área</span>
+          <span class="valor">Minería y Obras Civiles</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="icono">🎓</span> Formación Académica</h2>
+      <p>
+        <strong>Bachiller en Ingeniería Industrial</strong> por la
+        <strong>Universidad Católica San Pablo</strong>.
+      </p>
+      <p>
+        Obtuvo el <strong>Quinto Superior</strong> y fue becaria
+        <strong>PRONABEC</strong> durante toda la carrera.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="icono">⛏</span> Experiencia Profesional</h2>
+      <p>
+        Trabaja en <strong>ALTEMEC</strong>, en la unidad minera
+        <strong>Inmaculada</strong> (<strong>Hochschild Mining</strong>).
+      </p>
+      <ul class="lista">
+        <li>Valorizaciones de obras civiles: metalmecánica, civil, electricidad e instrumentación.</li>
+        <li>Valorizaciones de planta: chancado, molinos y planta de beneficio.</li>
+        <li>Supervisión de campo.</li>
+        <li>Participación en paradas de planta.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="icono">⚙</span> Enfoque de Trabajo</h2>
+      <p>Su perfil se centra en la mejora continua y la eficiencia operativa en el sector minero:</p>
+      <div class="tags">
+        <span class="tag">Planeamiento operativo</span>
+        <span class="tag">Programación de trabajos</span>
+        <span class="tag">Control de procesos</span>
+        <span class="tag">Logística</span>
+        <span class="tag">Mejora continua</span>
+        <span class="tag">Minería</span>
+      </div>
+    </section>
+
+    <section class="destacado">
+      <h2>Valorizaciones · Supervisión · Mejora Continua</h2>
+      <p>
+        Planeamiento operativo, programación de trabajos, control de procesos,
+        logística y mejora continua en minería.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>Denis Kameli Antayhua Flores</strong> · Ingeniero Industrial · Unidad Minera Inmaculada
+  </footer>
+
+</body>
+</html>
