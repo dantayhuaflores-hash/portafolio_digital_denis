@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Denis Kameli Antayhua Flores | Ingeniero Industrial</title>
+  <meta name="description" content="Portafolio de Denis Kameli Antayhua Flores, Ingeniera Industrial enfocada en planeamiento, valorizaciones, control de procesos y gestión en minería." />
+  <meta property="og:title" content="Denis Kameli Antayhua Flores | Ingeniera Industrial" />
+  <meta property="og:description" content="Portafolio profesional enfocado en planeamiento, valorizaciones, control de procesos y gestión en minería." />
+  <meta property="og:type" content="website" />
+  <title>Denis Kameli Antayhua Flores | Ingeniera Industrial</title>
   <style>
     :root {
       --azul: #1e3a8a;
@@ -133,6 +137,158 @@
       flex-shrink: 0;
     }
 
+    /* ---------- TIMELINE EXPERIENCIA ---------- */
+    .timeline {
+      position: relative;
+      margin-top: 10px;
+      padding-left: 28px;
+      display: grid;
+      gap: 26px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--azul-claro), var(--rosa));
+      opacity: .6;
+    }
+
+    .timeline-item {
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -24px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--azul-claro), var(--rosa));
+      box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.08);
+    }
+
+    .timeline-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .timeline-cargo {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--azul);
+    }
+
+    section:nth-child(even) .timeline-cargo {
+      color: var(--rosa);
+    }
+
+    .timeline-fecha {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--azul-claro);
+    }
+
+    .timeline-empresa {
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    /* ---------- COMPETENCIAS ---------- */
+    .competencias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .competencias-bloque {
+      background: linear-gradient(135deg, #eff6ff, #fdf2f8);
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px 22px;
+    }
+
+    .competencias-bloque h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: var(--azul);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .competencias-bloque:nth-child(even) h3 {
+      color: var(--rosa);
+    }
+
+    /* ---------- CONTACTO ---------- */
+    .contacto-lista {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .contacto-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #eff6ff, #fdf2f8);
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 14px 18px;
+    }
+
+    .contacto-icono {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--azul-claro), var(--rosa));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .contacto-texto {
+      display: grid;
+      gap: 2px;
+    }
+
+    .contacto-texto .etiqueta {
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--rosa);
+      font-weight: 700;
+    }
+
+    .contacto-texto .valor {
+      font-weight: 600;
+      color: var(--azul);
+      word-break: break-word;
+    }
+
+    .contacto-item a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contacto-item a:hover {
+      text-decoration: underline;
+    }
+
     p { margin-bottom: 10px; }
     p:last-child { margin-bottom: 0; }
 
@@ -219,6 +375,19 @@
     @media (max-width: 560px) {
       section { padding: 24px 20px; }
       header { padding: 55px 16px 50px; }
+      .timeline { padding-left: 22px; }
+      .timeline::before { left: 8px; }
+      .timeline-item::before { left: -18px; width: 12px; height: 12px; box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.08); }
+      .timeline-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+    }
+
+    @media (max-width: 480px) {
+      .datos { grid-template-columns: 1fr; }
+      .competencias-grid { grid-template-columns: 1fr; }
+      .contacto-lista { grid-template-columns: 1fr; }
+      .tags { gap: 8px; }
+      .tag { padding: 6px 12px; font-size: .86rem; }
+      section { padding: 22px 18px; }
     }
   </style>
 </head>
@@ -227,11 +396,21 @@
   <header>
     <div class="avatar">DK</div>
     <h1>Denis Kameli Antayhua Flores</h1>
-    <p class="subtitulo">Ingeniero Industrial · 26 años</p>
+    <p class="subtitulo">Ingeniera Industrial | Planeamiento, Valorizaciones y Control de Procesos</p>
     <span class="badge">Minería · Planeamiento y Control de Procesos</span>
   </header>
 
   <main>
+
+    <section>
+      <h2><span class="icono">👤</span> Perfil Profesional</h2>
+      <p>
+        Ingeniera Industrial con enfoque en <strong>planeamiento, valorizaciones, control de procesos y gestión</strong> en el sector minero.
+      </p>
+      <p>
+        Experiencia en la elaboración y gestión de valorizaciones para contratos marco y mantenimiento de planta (chancado, molinos y planta de beneficio), programación y planificación de trabajos (OT’s), revisión de precios unitarios, elaboración de presupuestos, seguimiento a indicadores de gestión (KPI), supervisión en campo de trabajos de alto riesgo y coordinación de recursos con áreas usuarias, Recursos Humanos y empresas especializadas.
+      </p>
+    </section>
 
     <section>
       <h2><span class="icono">i</span> Información Personal</h2>
@@ -239,10 +418,6 @@
         <div class="dato">
           <span class="etiqueta">Nombre</span>
           <span class="valor">Denis Kameli Antayhua Flores</span>
-        </div>
-        <div class="dato">
-          <span class="etiqueta">Edad</span>
-          <span class="valor">26 años</span>
         </div>
         <div class="dato">
           <span class="etiqueta">Formación</span>
@@ -269,38 +444,68 @@
 
     <section>
       <h2><span class="icono">⛏</span> Experiencia Profesional</h2>
-      <div style="margin-bottom: 18px;">
-        <p style="margin-bottom: 6px;">
-          <strong>Asistente de Operaciones</strong> | 
-          <span style="color: var(--azul); font-weight: 600;">Jun. 2025 – Ago. 2026</span>
-        </p>
-        <p style="margin-bottom: 12px;">
-          <strong>ALTEMEC S.A.C.</strong> — Unidad Minera Inmaculada | <strong>Hochschild Mining</strong>
-        </p>
-        <p style="font-weight: 600; color: var(--rosa); margin-bottom: 10px;">Principales actividades realizadas:</p>
-        <ul class="lista">
-          <li><strong>Programación y planificación de trabajos (OT’s):</strong> Elaboración de cronogramas y paquetes de trabajo para los proyectos de contratos de obras civiles, metalmecánica, electricidad e instrumentación.</li>
-          <li><strong>Gestión de valorizaciones:</strong> Elaboración y presentación de un promedio de 40 valorizaciones mensuales correspondientes a un Contrato Marco superior a S/ 1 millón, así como de valorizaciones de mantenimiento de molino, chancado y planta de beneficio, de acuerdo con la atención de servicios semanales y mensuales.</li>
-          <li><strong>Gestión de costos y presupuestos:</strong> Revisión de precios unitarios (PU) de acuerdo con las condiciones contractuales y elaboración de presupuestos de fabricación y servicios de hasta S/ 40,000, a partir del levantamiento de información en campo.</li>
-          <li><strong>Seguimiento de indicadores de gestión (KPI):</strong> Monitoreo y análisis de indicadores para el seguimiento de avances y presentación de resultados en reuniones con jefatura y gerencia.</li>
-          <li><strong>Supervisión y seguimiento de trabajos en campo:</strong> Supervisión de trabajos de alto riesgo, verificando el cumplimiento de las condiciones de seguridad establecidas y realizando seguimiento al avance y cumplimiento de las actividades programadas.</li>
-          <li><strong>Gestión y coordinación de recursos:</strong> Coordinación con áreas usuarias (Clientes), Recursos Humanos y empresas especializadas para asegurar la disponibilidad de personal y recursos necesarios para la ejecución de trabajos correspondientes al Contrato Marco y Contratos de planta.</li>
-        </ul>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <div class="timeline-cargo">Asistente de Operaciones</div>
+            <div class="timeline-fecha">Jun. 2025 – Ago. 2026</div>
+          </div>
+          <div class="timeline-empresa">
+            <strong>ALTEMEC S.A.C.</strong> — Unidad Minera Inmaculada | <strong>Hochschild Mining</strong>
+          </div>
+          <p style="font-weight: 600; color: var(--rosa); margin-bottom: 10px;">Principales actividades realizadas:</p>
+          <ul class="lista">
+            <li><strong>Programación y planificación de trabajos (OT’s):</strong> Elaboración de cronogramas y paquetes de trabajo para los proyectos de contratos de obras civiles, metalmecánica, electricidad e instrumentación.</li>
+            <li><strong>Gestión de valorizaciones:</strong> Elaboración y presentación de un promedio de 40 valorizaciones mensuales correspondientes a un Contrato Marco superior a S/ 1 millón, así como de valorizaciones de mantenimiento de molino, chancado y planta de beneficio, de acuerdo con la atención de servicios semanales y mensuales.</li>
+            <li><strong>Gestión de costos y presupuestos:</strong> Revisión de precios unitarios (PU) de acuerdo con las condiciones contractuales y elaboración de presupuestos de fabricación y servicios de hasta S/ 40,000, a partir del levantamiento de información en campo.</li>
+            <li><strong>Seguimiento de indicadores de gestión (KPI):</strong> Monitoreo y análisis de indicadores para el seguimiento de avances y presentación de resultados en reuniones con jefatura y gerencia.</li>
+            <li><strong>Supervisión y seguimiento de trabajos en campo:</strong> Supervisión de trabajos de alto riesgo, verificando el cumplimiento de las condiciones de seguridad establecidas y realizando seguimiento al avance y cumplimiento de las actividades programadas.</li>
+            <li><strong>Gestión y coordinación de recursos:</strong> Coordinación con áreas usuarias (Clientes), Recursos Humanos y empresas especializadas para asegurar la disponibilidad de personal y recursos necesarios para la ejecución de trabajos correspondientes al Contrato Marco y Contratos de planta.</li>
+          </ul>
+        </article>
       </div>
     </section>
 
     <section>
-      <h2><span class="icono">⚙</span> Enfoque de Trabajo</h2>
-      <p>Su perfil se centra en la mejora continua y la eficiencia operativa en el sector minero:</p>
-      <div class="tags">
-        <span class="tag">Planeamiento operativo</span>
-        <span class="tag">Programación de trabajos</span>
-        <span class="tag">Control de procesos</span>
-        <span class="tag">Logística</span>
-        <span class="tag">Mejora continua</span>
-        <span class="tag">Minería</span>
+      <h2><span class="icono">⚙</span> Competencias Clave</h2>
+      <div class="competencias-grid">
+        <div class="competencias-bloque">
+          <h3>🛠 Técnicas</h3>
+          <ul class="lista">
+            <li>Programación y planificación de OT’s</li>
+            <li>Valorizaciones (Contrato Marco y Mantenimiento de Planta)</li>
+            <li>Precios Unitarios (PU) y Presupuestos</li>
+            <li>Seguimiento a Indicadores de Gestión (KPI)</li>
+            <li>Gestión de costos</li>
+          </ul>
+        </div>
+        <div class="competencias-bloque">
+          <h3>🤝 Gestión</h3>
+          <ul class="lista">
+            <li>Supervisión en campo de trabajos de alto riesgo</li>
+            <li>Coordinación con áreas usuarias y empresas especializadas</li>
+            <li>Gestión y coordinación de recursos</li>
+            <li>Seguimiento al avance y cumplimiento de actividades programadas</li>
+            <li>Cumplimiento de condiciones de seguridad</li>
+          </ul>
+        </div>
       </div>
     </section>
+
+    <section>
+      <h2><span class="icono">✉</span> Contacto</h2>
+      <div class="contacto-lista">
+        <div class="contacto-item">
+          <div class="contacto-icono">in</div>
+          <div class="contacto-texto">
+            <span class="etiqueta">LinkedIn</span>
+            <span class="valor"><a href="https://www.linkedin.com/in/denisantayhua/" target="_blank" rel="noopener">linkedin.com/in/denisantayhua</a></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección "Enfoque de Trabajo" reemplazada por "Competencias Clave" -->
 
     <section class="destacado">
       <h2>Valorizaciones · Supervisión · Mejora Continua</h2>
